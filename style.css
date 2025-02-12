@@ -1,0 +1,77 @@
+body {
+    background-color: pink;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.container {
+    margin-top: 50px;
+}
+
+button {
+    display: block;
+    margin: 15px auto;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+#startButton {
+    background-color: red;
+    color: white;
+}
+
+#heartImageButton {
+    background-color: white;
+    color: red;
+    border: 2px solid red;
+}
+
+#surpriseButton {
+    background-color: #ff69b4;
+    color: white;
+}
+
+.heart-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.surprise {
+    font-size: 20px;
+    color: red;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+}
+
+.background-heart {
+    position: fixed;
+    left: 50%;
+    top: -10px;
+    font-size: 2rem;
+    animation: fall 5s linear infinite;
+}
